@@ -17,8 +17,8 @@ public class Candidato extends Usuario {
     @Required
     private LocalDate fechaNacimiento; // OpenXava generará un calendario automáticamente
 
-    @Column(length = 1)
+    @Enumerated(EnumType.STRING) // Le dice a JPA que guarde el nombre del Enum (ej. "MASCULINO") en vez de un número.
     @Required
-    private char genero;
+    private Genero genero;
 
 }
