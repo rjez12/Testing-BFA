@@ -4,6 +4,12 @@ import javax.persistence.*;
 
 import dev.langchain4j.agent.tool.P;
 import lombok.*;
+
+import javax.persistence.*;
+import lombok.*;
+import org.bfa.PruebaPOO.modelo.Candidato;
+import org.bfa.PruebaPOO.modelo.EnumestadoTest;
+import org.bfa.PruebaPOO.modelo.RespuestaCandidato;
 import org.openxava.annotations.*;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -50,5 +56,10 @@ public class TestBFA {
             // si alguien intenta guardar cambios o eliminar un test finalizado, postgresql abortara
             throw new IllegalStateException("regla de seguridad 6: el examen esta finalizado y es inmutable.");
         }
+    public resultadocalculo calcularresultado() {
+
+        calculadorresultado calculador = new calculadorresultado();
+
+        return calculador.calcular(new ArrayList<>(this.getRespuestas()));
     }
 }
