@@ -30,7 +30,7 @@ public class TestBFA {
     private EnumestadoTest estado;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @DescriptionsList // openxava dibujará un combo box con los candidatos
+    @DescriptionsList(descriptionProperties = "nombres, apellidos") // le decimos explícitamente qué mostrar
     private Candidato candidato;
 
     @OneToMany(mappedBy = "testbfa", cascade = CascadeType.ALL)
