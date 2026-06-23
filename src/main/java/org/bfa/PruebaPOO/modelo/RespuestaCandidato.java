@@ -1,11 +1,16 @@
 package org.bfa.PruebaPOO.modelo;
 
 import javax.persistence.*;
+
+import org.bfa.PruebaPOO.modelo.Alternativa;
+import org.bfa.PruebaPOO.modelo.Reactivo;
+import org.bfa.PruebaPOO.modelo.TestBFA;
 import org.openxava.annotations.*;
 import lombok.*;
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 public class RespuestaCandidato {
 
     @Id
@@ -19,9 +24,8 @@ public class RespuestaCandidato {
     @ManyToOne
     private Reactivo reactivo;
 
-    @ManyToOne(optional = true) // nullable en el uml por si el candidato omite la pregunta
+    @ManyToOne(optional = true)
     private Alternativa alternativaseleccionada;
 
     private long tiemporespuestamilisegundos;
-
 }

@@ -1,10 +1,14 @@
 package org.bfa.PruebaPOO.modelo;
+
 import javax.persistence.*;
+
+import org.bfa.PruebaPOO.modelo.TestBFA;
 import org.openxava.annotations.*;
 import lombok.*;
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 public class Resultado {
 
     @Id
@@ -29,8 +33,4 @@ public class Resultado {
 
     @OneToOne(fetch = FetchType.LAZY)
     private TestBFA testbfa;
-
-    // este es el esqueleto del metodo definido en tu uml
-    public void calcularmetricasexamen(Integer idtest) {
-    }
 }
